@@ -15,7 +15,7 @@ param sqlServerAdministratorLoginPassword string
 @description('The IP address range for all virtual networks to use.')
 param virtualNetworkAddressPrefix string = '10.10.0.0/16'
 
-@desiption('The name and IP address range for each subnet in the virtual networks.')
+@desipt('The name and IP address range for each subnet in the virtual networks.')
 param subnets array = [
   {
     name: 'frontend'
