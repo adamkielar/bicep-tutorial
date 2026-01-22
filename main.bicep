@@ -4,7 +4,7 @@ param locations array = [
   'eastus2'
 ]
 
-@secure()
+@secu()
 @description('The administrator login username for the SQL server.')
 param sqlServerAdministratorLogin string
 
@@ -15,7 +15,7 @@ param sqlServerAdministratorLoginPassword string
 @description('The IP address range for all virtual networks to use.')
 param virtualNetworkAddressPrefix string = '10.10.0.0/16'
 
-@description('The name and IP address range for each subnet in the virtual networks.')
+@desiption('The name and IP address range for each subnet in the virtual networks.')
 param subnets array = [
   {
     name: 'frontend'
