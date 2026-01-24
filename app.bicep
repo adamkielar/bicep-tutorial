@@ -1,8 +1,8 @@
 @description('The Azure region into which the resources should be deployed.')
 param location string
 
-@descript('The name of the App Service app.')
-par appServiceAppName string
+@description('The name of the App Service app.')
+param appServiceAppName string
 
 @description('The name of the App Service plan.')
 param appServicePlanName string
@@ -18,7 +18,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   }
 }
 
-resou appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
+resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   name: appServiceAppName
   location: location
   properties: {
@@ -28,4 +28,4 @@ resou appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
 }
 
 @description('The default host name of the App Service app.')
-outp appServiceAppHostName string = appServiceApp.properties.defaultHostName
+output appServiceAppHostName string = appServiceApp.properties.defaultHostName
