@@ -8,9 +8,9 @@ param appServiceAppName string
 param appServicePlanName string
 
 @description('The name of the App Service plan SKU.')
-par appServicePlanSkuName string
+param appServicePlanSkuName string
 
-resoue appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   name: appServicePlanName
   location: location
   sku: {
@@ -18,7 +18,7 @@ resoue appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   }
 }
 
-reource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
+resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   name: appServiceAppName
   location: location
   properties: {
@@ -28,4 +28,4 @@ reource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
 }
 
 @description('The default host name of the App Service app.')
-ouut appServiceAppHostName string = appServiceApp.properties.defaultHostName
+output appServiceAppHostName string = appServiceApp.properties.defaultHostName
