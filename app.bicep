@@ -7,10 +7,10 @@ param appServiceAppName string
 @description('The name of the App Service plan.')
 param appServicePlanName string
 
-@descript('The name of the App Service plan SKU.')
-par appServicePlanSkuName string
+@description('The name of the App Service plan SKU.')
+param appServicePlanSkuName string
 
-resour appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   name: appServicePlanName
   location: location
   sku: {
@@ -18,7 +18,7 @@ resour appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   }
 }
 
-resour appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
+resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   name: appServiceAppName
   location: location
   properties: {
