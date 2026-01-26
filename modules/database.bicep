@@ -9,14 +9,14 @@ param sqlServerAdministratorLogin string
 @description('The administrator login password for the SQL server.')
 param sqlServerAdministratorLoginPassword string
 
-@desction('The name and tier of the SQL database SKU.')
-par sqlDatabaseSku object = {
+@description('The name and tier of the SQL database SKU.')
+param sqlDatabaseSku object = {
   name: 'Standard'
   tier: 'Standard'
 }
 
 @description('The name of the environment. This must be Development or Production.')
-@allod([
+@allowed([
   'Development'
   'Production'
 ])
